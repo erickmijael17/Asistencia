@@ -1,20 +1,24 @@
-
 package org.example;
 
 import java.util.Date;
 
 public class Persona {
     protected String nombre;
-
-    protected String EstadoAsis;
-
+    protected String estadoAsis;
     char genero;
+    Date fechaReg;
 
-    Date fechareg;
+    public Persona(){}
+
+    public Persona(String nombre, String estadoAsis, Date fechaReg){
+        this.nombre = nombre;
+        this.estadoAsis = estadoAsis;
+        this.fechaReg = fechaReg;
+    }
 
     public Persona(String nombre, String estadoAsis, char genero) {
         this.nombre = nombre;
-        this.EstadoAsis = estadoAsis;
+        this.estadoAsis = estadoAsis;
         this.genero=genero;
     }
 
@@ -27,11 +31,15 @@ public class Persona {
     }
 
     public String getEstadoAsis() {
-        return EstadoAsis;
+        return estadoAsis;
     }
 
     public void setEstadoAsis(String estadoAsis) {
-        EstadoAsis = estadoAsis;
+        this.estadoAsis = estadoAsis;
+    }
+
+    @Override
+    public String toString() {
+        return this.nombre +"\t"+ this.estadoAsis +"\t"+ this.fechaReg;
     }
 }
-
